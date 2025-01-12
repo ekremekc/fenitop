@@ -97,9 +97,9 @@ class Heaviside():
 
     def forward(self, beta, eta=0.5):
         denominator = np.tanh(beta*eta) + np.tanh(beta*(1-eta))
-        self.drho = beta*(1-np.tanh(beta*(self.rho_phys.vector-eta))**2) / denominator
+        self.drho = beta*(1-np.tanh(beta*(self.rho_phys.vector.array-eta))**2) / denominator
         self.rho_phys.vector.array = (
-            np.tanh(beta*eta)+np.tanh(beta*(self.rho_phys.vector-eta))) / denominator
+            np.tanh(beta*eta)+np.tanh(beta*(self.rho_phys.vector.array-eta))) / denominator
         self.rho_phys.x.scatter_forward()
 
     def backward(self, vectors):

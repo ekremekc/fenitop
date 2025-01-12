@@ -25,8 +25,12 @@ from dolfinx.mesh import create_box, CellType
 from fenitop.topopt import topopt
 
 
+# mesh = create_box(MPI.COMM_WORLD, [[0, 0, 0], [10, 30, 10]],
+#                   [75, 225, 75], CellType.hexahedron)
 mesh = create_box(MPI.COMM_WORLD, [[0, 0, 0], [10, 30, 10]],
-                  [75, 225, 75], CellType.hexahedron)
+                  [25, 75, 25], CellType.hexahedron)
+
+
 if MPI.COMM_WORLD.rank == 0:
     mesh_serial = create_box(MPI.COMM_SELF, [[0, 0, 0], [10, 30, 10]],
                              [75, 225, 75], CellType.hexahedron)
@@ -52,7 +56,7 @@ fem = {  # FEA parameters
 }
 
 opt = {  # Topology optimization parameters
-    "max_iter": 400,
+    "max_iter": 100,
     "opt_tol": 1e-5,
     "vol_frac": 0.08,
     "solid_zone": lambda x: np.full(x.shape[1], False),
