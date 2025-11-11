@@ -69,6 +69,16 @@ To install FEniTop, simply execute the command in your terminal (such as the ter
 git clone https://github.com/missionlab/fenitop
 ```
 
+### Conda installation
+
+```bash
+conda create -n fenitop python=3.11.0
+conda activate fenitop
+conda install -c conda-forge fenics-dolfinx=0.7.3 pyvista=0.44.1 # Linux and macOS
+pip3 install -e .
+
+```
+
 ### How to run FEniTop scripts
 To run FEniTop scripts, simply execute the following commands in your terminal.
 

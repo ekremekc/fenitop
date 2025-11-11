@@ -25,10 +25,10 @@ from dolfinx.mesh import create_box, CellType
 from fenitop.topopt import topopt
 
 
-# mesh = create_box(MPI.COMM_WORLD, [[0, 0, 0], [10, 30, 10]],
-#                   [75, 225, 75], CellType.hexahedron)
 mesh = create_box(MPI.COMM_WORLD, [[0, 0, 0], [10, 30, 10]],
-                  [25, 75, 25], CellType.hexahedron)
+                  [75, 225, 75], CellType.hexahedron)
+# mesh = create_box(MPI.COMM_WORLD, [[0, 0, 0], [10, 30, 10]],
+#                   [25, 75, 25], CellType.hexahedron)
 
 
 if MPI.COMM_WORLD.rank == 0:
