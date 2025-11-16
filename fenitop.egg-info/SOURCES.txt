@@ -11,4 +11,5 @@ fenitop/utility.py
 fenitop.egg-info/PKG-INFO
 fenitop.egg-info/SOURCES.txt
 fenitop.egg-info/dependency_links.txt
+fenitop.egg-info/requires.txt
 fenitop.egg-info/top_level.txt

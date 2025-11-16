@@ -1,6 +1,12 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: fenitop
 Version: 0.0.0
 Author: Ekrem Ekici
 Author-email: ee331@cantab.ac.uk
 License-File: LICENSE
+Requires-Dist: pyvista
+Requires-Dist: scipy
+Dynamic: author
+Dynamic: author-email
+Dynamic: license-file
+Dynamic: requires-dist
