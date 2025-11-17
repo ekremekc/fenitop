@@ -4,7 +4,7 @@ import sys
 
 dir_path = os.path.dirname(os.path.abspath(__file__))
 
-filename = "domain"
+filename = "domain2"
 
 geomDir = os.path.join(dir_path, 'GeomDir')
 meshDir = os.path.join(dir_path, 'MeshDir')
@@ -21,7 +21,7 @@ gmsh.model.occ.removeAllDuplicates()
 gmsh.model.occ.synchronize()
 
 # lc = 0.0080
-lc = 0.005
+lc = 0.003
 
 # led_tag = 2
 
