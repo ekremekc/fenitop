@@ -8,6 +8,9 @@ setup(
     packages=['fenitop'],
     install_requires=[
         'pyvista',
-        'scipy'
+        'scipy',
+        'gmsh',
+        'meshio',
+        'h5py==3.11'
     ]
 )
