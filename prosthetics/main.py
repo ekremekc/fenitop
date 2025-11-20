@@ -5,7 +5,7 @@ from fenitop.topopt import topopt
 from fenitop.io_utils import XDMFReader
 import dolfinx
 # Read mesh 
-filename = 'domain2'
+filename = 'domain'
 Topology = XDMFReader("MeshDir/"+filename)
 mesh, subdomains, facet_tags = Topology.getAll()
 Topology.getInfo()
@@ -14,7 +14,7 @@ if MPI.COMM_WORLD.rank == 0:
     with dolfinx.io.XDMFFile(MPI.COMM_SELF, "MeshDir/"+filename+".xdmf", "r") as xdmf:
         mesh_serial = xdmf.read_mesh(name="Grid")
 
-bottom_tag = 29 # 5 for domain, 29 for domain2
+bottom_tag = 5 # 5 for domain, 29 for domain2
 from ufl import Measure
 from dolfinx.fem import form
 from dolfinx.fem.assemble import assemble_scalar
@@ -44,7 +44,7 @@ fem = {  # FEA parameters
 }
 
 opt = {  # Topology optimization parameters
-    "max_iter": 10,
+    "max_iter": 50,
     "opt_tol": 1e-5,
     "vol_frac": 0.1,
     "solid_zone": lambda x: np.full(x.shape[1], False),

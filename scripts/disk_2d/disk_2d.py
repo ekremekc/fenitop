@@ -25,10 +25,10 @@ import dolfinx.io
 from fenitop.topopt import topopt
 
 
-with dolfinx.io.XDMFFile(MPI.COMM_WORLD, "meshes/disk_2d.xdmf", "r") as xdmf:
+with dolfinx.io.XDMFFile(MPI.COMM_WORLD, "disk_2d.xdmf", "r") as xdmf:
     mesh = xdmf.read_mesh(name="Grid")
 if MPI.COMM_WORLD.rank == 0:
-    with dolfinx.io.XDMFFile(MPI.COMM_SELF, "meshes/disk_2d.xdmf", "r") as xdmf:
+    with dolfinx.io.XDMFFile(MPI.COMM_SELF, "disk_2d.xdmf", "r") as xdmf:
         mesh_serial = xdmf.read_mesh(name="Grid")
 else:
     mesh_serial = None
