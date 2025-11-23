@@ -72,7 +72,7 @@ git clone https://github.com/missionlab/fenitop
 ### Conda installation
 
 ```bash
-sudo apt install libgl1-mesa-glx xvfb
+sudo apt install xvfb
 conda create -n fenitop python=3.11.0
 conda activate fenitop
 conda install -c conda-forge fenics-dolfinx=0.7.3 pyvista=0.44.1 # Linux and macOS

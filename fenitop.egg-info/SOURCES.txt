@@ -3,6 +3,7 @@ README.md
 setup.py
 fenitop/__init__.py
 fenitop/fem.py
+fenitop/io_utils.py
 fenitop/optimize.py
 fenitop/parameterize.py
 fenitop/sensitivity.py

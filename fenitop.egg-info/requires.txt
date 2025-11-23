@@ -1,2 +1,5 @@
 pyvista
 scipy
+gmsh
+meshio
+h5py==3.11

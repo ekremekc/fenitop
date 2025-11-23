@@ -13,7 +13,8 @@ Topology.getInfo()
 if MPI.COMM_WORLD.rank == 0:
     with dolfinx.io.XDMFFile(MPI.COMM_SELF, "MeshDir/"+filename+".xdmf", "r") as xdmf:
         mesh_serial = xdmf.read_mesh(name="Grid")
-
+else:
+    mesh_serial = None
 bottom_tag = 5 # 5 for domain, 29 for domain2
 from ufl import Measure
 from dolfinx.fem import form
